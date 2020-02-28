@@ -36,53 +36,53 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 Visit this page and copy paste the code below in the text editor
 [https://www.planttext.com/](https://www.planttext.com/)
 ```
-	@startuml
+@startuml
 
-	hide circle
+hide circle
 
-	entity "members" as e01 {
-	  * id : number <<generated>>
-	  --
-	  * name : string
-	  * gender : enum
-	  * phone : integer
-	  * email : string
-	  * address : text
-	  --
-	  * division_id : unsigned integer <<FK>>
-	  * created_at : timestamps 
-	  * updated_at : timestamps
-	}
+entity "members" as e01 {
+    * id : number <<generated>>
+    --
+    * name : string
+    * gender : enum
+    * phone : integer
+    * email : string
+    * address : text
+    --
+    * division_id : unsigned integer <<FK>>
+    * created_at : timestamps 
+    * updated_at : timestamps
+}
 
-	entity "divisions" as e02 {
-	  *id : integer <<generated>>
-	  --
-	  *name : string 
-	  -- 
-	  * created_at : timestamps 
-	  * updated_at : timestamps
-	}
+entity "divisions" as e02 {
+    *id : integer <<generated>>
+    --
+    *name : string 
+    -- 
+    * created_at : timestamps 
+    * updated_at : timestamps
+}
 
-	e01 }|..|| e02
+e01 }|..|| e02
 
-	@enduml
+@enduml
 ```
 
 ## Routing
  1. #### Basic Routing
 ```php
-    Route::get('foo', function () {
-	    return 'Hello World';
-    });
+Route::get('foo', function () {
+    return 'Hello World';
+});
 ```
  2. #### Available Router Methods
 ```php
-	Route::get($uri, $callback);
-	Route::post($uri, $callback);
-	Route::put($uri, $callback);
-	Route::patch($uri, $callback);
-	Route::delete($uri, $callback);
-	Route::options($uri, $callback);
+Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
 ```
 ## Controller
 ```php
